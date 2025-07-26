@@ -1,0 +1,18 @@
+<!-- File: index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button Click Example</title>
+</head>
+<body>
+
+  <button id="clickMe">Click Me</button>
+
+  <script>
+    document.querySelector("#clickMe").addEventListener("click", function() {
+      document.body.insertAdjacentHTML('beforeend', '<p>Button clicked!</p>');
+});
+  </script>
+
+</body>
+</html>
