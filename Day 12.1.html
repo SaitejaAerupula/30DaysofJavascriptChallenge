@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Day 12 Challenges</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem;}
+.highlighted {
+      border: 2px solid gold;
+      background-color: #ffffe0;
+}
+  </style>
+</head>
+<body>
+  <p class="status">Waiting for update...</p>
+
+  <button id="toggle-bg">Toggle Background</button>
+  <div id="highlight-box">Click Me!</div>
+  <div id="fade-me" style="opacity: 0; transition: opacity 2s; margin-top: 1rem;">Fading In...</div>
+
+  <script>
+    // 🖱 1. Change Text Content
+    document.querySelector(".status").textContent = "Updated with JS!";
+
+    // 🖱 2. Background Color Toggle
+    document.getElementById("toggle-bg").addEventListener("click", () => {
+      const current = document.body.style.backgroundColor;
+      document.body.style.backgroundColor = current === "lightgray"? "white": "lightgray";
+});
+
+    // 🖱 3. Add Class on Click
+    document.getElementById("highlight-box").addEventListener("click", () => {
+      document.getElementById("highlight-box").classList.add("highlighted");
+});
+
+    // 🖱 5. Fade-In Effect
+    const fadeElement = document.getElementById("fade-me");
+    setTimeout(() => {
+      fadeElement.style.opacity = 1;
+}, 100); // Triggers fade after a brief delay
+  </script>
+</body>
+</html>
