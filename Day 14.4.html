@@ -1,0 +1,15 @@
+<select id="color-select">
+  <option value="Red">Red</option>
+  <option value="Blue">Blue</option>
+  <option value="Green">Green</option>
+</select>
+<p id="selected-color"></p>
+
+
+<script>
+    //select option display
+    document.getElementById("color-select").addEventListener("change", (e) => {
+  document.getElementById("selected-color").textContent = `You chose: ${e.target.value}`;
+});
+</script>
+

@@ -1,0 +1,13 @@
+<label><input type="checkbox" id="subscribe" /> Subscribe</label>
+<p id="status"></p>
+
+
+<script>
+//checkbox subscription status
+    document.getElementById("subscribe").addEventListener("change", (e) => {
+  document.getElementById("status").textContent = e.target.checked
+? "Subscribed ✅"
+: "Unsubscribed ❌";
+});
+
+</script>

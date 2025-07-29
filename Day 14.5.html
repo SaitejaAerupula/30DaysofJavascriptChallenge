@@ -1,0 +1,18 @@
+
+<input type="text" id="item-input" placeholder="Add item" />
+<button id="add-item-btn">Add</button>
+<ul id="item-list"></ul>
+
+
+<script>
+//dynamic item addition
+document.getElementById("add-item-btn").addEventListener("click", () => {
+  const itemText = document.getElementById("item-input").value;
+  if (itemText) {
+    const li = document.createElement("li");
+    li.textContent = itemText;
+    document.getElementById("item-list").appendChild(li);
+    document.getElementById("item-input").value = "";
+}
+});
+</script>

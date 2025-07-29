@@ -1,0 +1,12 @@
+<input type="text" id="username" placeholder="Type your name" />
+<button id="echo-btn">Echo</button>
+<p id="echo-output"></p>
+
+<script>
+//echo user input
+    document.getElementById("echo-btn").addEventListener("click", () => {
+  const name = document.getElementById("username").value;
+  document.getElementById("echo-output").textContent = `Hello, ${name}!`;
+});
+</script>
+

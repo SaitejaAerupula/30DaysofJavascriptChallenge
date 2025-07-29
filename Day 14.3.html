@@ -1,0 +1,15 @@
+<input type="number" id="num1" />
+<input type="number" id="num2" />
+<button id="add-btn">Add</button>
+<p id="result"></p>
+
+
+<script>
+    //simple addition
+    document.getElementById("add-btn").addEventListener("click", () => {
+  const a = Number(document.getElementById("num1").value);
+  const b = Number(document.getElementById("num2").value);
+  document.getElementById("result").textContent = `Sum: ${a + b}`;
+});
+</script>
+
