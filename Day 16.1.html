@@ -1,0 +1,54 @@
+
+<input id="name-input" placeholder="Type your name">
+<script>
+  const input = document.getElementById('name-input');
+  input.addEventListener('input', () => {
+    console.log(input.value);
+});
+</script>
+
+<div id="hover-box">Hover me!</div>
+<style>
+  #hover-box {
+    width: 200px;
+    height: 100px;
+    background-color: lightblue;
+    text-align: center;
+    line-height: 100px;
+}
+</style>
+<script>
+  const box = document.getElementById('hover-box');
+  box.addEventListener('mouseover', () => {
+    box.style.backgroundColor = 'lightgreen';
+});
+  box.addEventListener('mouseout', () => {
+    box.style.backgroundColor = 'lightblue';
+});
+</script>
+
+
+<form id="my-form">
+  <input id="form-input" placeholder="Enter something">
+  <button type="submit">Submit</button>
+</form>
+<script>
+  const form = document.getElementById('my-form');
+  const input = document.getElementById('form-input');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log(input.value);
+});
+</script>
+
+
+<button id="toggle-btn">Toggle Message</button>
+<div id="secret" style="display: none;">Hidden Message</div>
+<script>
+  const btn = document.getElementById('toggle-btn');
+  const secret = document.getElementById('secret');
+  btn.addEventListener('click', () => {
+    secret.style.display = secret.style.display === 'none'? 'block': 'none';
+});
+</script>
+
