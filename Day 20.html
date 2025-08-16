@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Day 20</title>
+  <style>
+    #panel { height:0; overflow:hidden; transition:height 0.5s; }
+    #move-box { width:50px; height:50px; background:red; position:absolute; }
+    #hover-box { width:150px; height:50px; border:1px solid #000; margin-bottom:10px; }
+  </style>
+</head>
+<body>
+
+<div id="hover-box">Hover over me!</div>
+
+<input type="text" id="email" placeholder="Enter email">
+<button id="validate">Validate</button>
+
+<div id="countdown"></div>
+
+<button id="toggle-panel">Toggle Panel</button>
+<div id="panel">Content here</div>
+
+<div id="move-box"></div>
+
+<script>
+  // Hover box
+  const hoverBox = document.getElementById("hover-box");
+  hoverBox.addEventListener("mouseover", () => hoverBox.style.backgroundColor = "lightblue");
+  hoverBox.addEventListener("mouseout", () => hoverBox.style.backgroundColor = "");
+
+  // Email validation
+  document.getElementById("validate").addEventListener("click", () => {
+    const email = document.getElementById("email").value;
+    if (email.includes("@")) {
+      alert("Valid email!");
+    } else {
+      alert("Invalid email.");
+    }
+  });
+
+  // Countdown
+  let count = 10;
+  const display = document.getElementById("countdown");
+  const timer = setInterval(() => {
+    display.textContent = count;
+    count--;
+    if (count < 0) clearInterval(timer);
+  }, 1000);
+
+  // Toggle panel
+  const panel = document.getElementById("panel");
+  document.getElementById("toggle-panel").addEventListener("click", () => {
+    panel.style.height = panel.style.height === "100px" ? "0" : "100px";
+  });
+
+  // Move box animation
+  const moveBox = document.getElementById("move-box");
+  let start = null;
+  function animate(timestamp) {
+    if (!start) start = timestamp;
+    const progress = timestamp - start;
+    const distance = Math.min(progress / 10, 300); // max 300px
+    moveBox.style.left = distance + "px";
+    if (distance < 300) requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
+</script>
+</body>
+</html>
